@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "masterPortfolio",
+  "name": "TravisWebsite",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://travislee7.github.io",
   "scripts": {
     "build": "react-scripts --openssl-legacy-provider build",
     "predeploy": "npm run build",
@@ -12,6 +12,7 @@
     "test": "react-scripts test"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "apollo-boost": "^0.4.4",
     "baseui": "^9.65.3",
     "chart.js": "^2.9.3",
