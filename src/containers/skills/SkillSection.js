@@ -8,14 +8,47 @@ import FullStackImg from "./FullStackImg";
 import CloudInfraImg from "./CloudInfraImg";
 import DesignImg from "./DesignImg";
 
+// function GetSkillSvg(props) {
+//   if (typeof props.fileName === "string") {
+//     if (props.fileName === "DataScienceImg")
+//       return <DataScienceImg theme={props.theme} />;
+//     else if (props.fileName === "FullStackImg")
+//       return <FullStackImg theme={props.theme} />;
+//     else if (props.fileName === "CloudInfraImg")
+//       return <CloudInfraImg theme={props.theme} />;
+//     else return <DesignImg theme={props.theme} />;
+//   } else {
+//     // If fileName is an imported image (JPEG/PNG), render it directly
+//     return (
+//       <img
+//         src={props.fileName}
+//         alt="Skill visual"
+//         style={{ width: "100%", borderRadius: "12px" }}
+//       />
+//     );
+//   }
+// }
+
 function GetSkillSvg(props) {
-  if (props.fileName === "DataScienceImg")
-    return <DataScienceImg theme={props.theme} />;
-  else if (props.fileName === "FullStackImg")
-    return <FullStackImg theme={props.theme} />;
-  else if (props.fileName === "CloudInfraImg")
-    return <CloudInfraImg theme={props.theme} />;
-  return <DesignImg theme={props.theme} />;
+  switch (props.fileName) {
+    case "DataScienceImg":
+      return <DataScienceImg theme={props.theme} />;
+    case "FullStackImg":
+      return <FullStackImg theme={props.theme} />;
+    case "CloudInfraImg":
+      return <CloudInfraImg theme={props.theme} />;
+    case "DesignImg":
+      return <DesignImg theme={props.theme} />;
+    default:
+      // If fileName is an imported image path (JPG/PNG)
+      return (
+        <img
+          src={props.fileName}
+          alt="Skill"
+          style={{ width: "100%", borderRadius: "12px" }}
+        />
+      );
+  }
 }
 
 class SkillSection extends Component {

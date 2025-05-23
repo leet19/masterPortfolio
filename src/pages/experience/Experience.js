@@ -7,6 +7,7 @@ import "./Experience.css";
 import { experience } from "../../portfolio.js";
 import { Fade } from "react-reveal";
 import ExperienceImg from "./ExperienceImg";
+import me5 from "../../assets/images/me5.jpeg";
 
 // const experience = {
 // 	title: "Experience",
@@ -158,7 +159,12 @@ class Experience extends Component {
 									src={require(`../../assets/images/${experience["header_image_path"]}`)}
 									alt=""
 								/> */}
-                <ExperienceImg theme={theme} />
+                {/* <ExperienceImg theme={theme} /> */}
+                <img
+                  src={me5}
+                  alt="Experience"
+                  className="experience-img-custom"
+                />
               </div>
               <div className="experience-heading-text-div">
                 <h1
@@ -183,7 +189,35 @@ class Experience extends Component {
             </div>
           </Fade>
         </div>
-        <ExperienceAccordion sections={experience["sections"]} theme={theme} />
+        {/* <ExperienceAccordion sections={experience["sections"]} theme={theme} /> */}
+        <div className="experience-cards-div">
+          {experience.sections
+            .flatMap((section) => section.experiences)
+            .map((exp, index) => (
+              <Fade bottom duration={1000} distance="20px" key={index}>
+                <div className="experience-card">
+                  <div className="experience-card-left">
+                    <img
+                      className="experience-card-logo"
+                      src={require(`../../assets/images/${exp.logo_path}`)}
+                      alt={exp.company}
+                    />
+                  </div>
+                  <div className="experience-card-right">
+                    <h2 style={{ color: theme.text }}>{exp.title}</h2>
+                    <h3 style={{ color: theme.secondaryText }}>
+                      {exp.company}
+                    </h3>
+                    <p style={{ color: theme.secondaryText }}>
+                      {exp.duration} | {exp.location}
+                    </p>
+                    <p style={{ color: theme.text }}>{exp.description}</p>
+                  </div>
+                </div>
+              </Fade>
+            ))}
+        </div>
+
         <Footer theme={this.props.theme} onToggle={this.props.onToggle} />
         <TopButton theme={this.props.theme} />
       </div>

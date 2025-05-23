@@ -86,3 +86,42 @@
     text-align: center;
   }
 }
+
+.experience-cards-div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 20px;
+  margin-top: 40px;
+}
+
+.experience-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background-color: var(--experienceCard-bg);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.experience-card-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.experience-card-right {
+  flex: 1;
+}
+
+.experience-img-custom {
+  width: 100%;
+  max-width: 600px;
+  /* Increase this value for a larger image */
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+}

@@ -126,17 +126,24 @@
 /* 48em = 768px */
 
 @media (min-width: 48em) {
-  .header li {
-    float: left;
-  }
   .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    /* Center menu items */
   }
+
   .header .menu {
+    display: flex;
+    gap: 20px;
     max-height: none;
   }
+
+  .header li {
+    float: none;
+    /* Remove float so flex can work */
+  }
+
   .header .menu-icon {
     display: none;
   }

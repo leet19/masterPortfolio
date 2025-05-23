@@ -5,6 +5,7 @@
   cursor: pointer;
   flex: 1 1 25%;
 }
+
 .repo-card-div:hover {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
 }
@@ -66,7 +67,6 @@
 }
 
 .repo-description {
-  overflow: hidden;
   text-align: left;
   display: -webkit-box;
   font-family: "Google Sans Regular";
@@ -119,4 +119,12 @@
   .repo-creation-date {
     font-size: 14px;
   }
+}
+
+.repo-cards-div-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 60px 40px 0 40px;
 }

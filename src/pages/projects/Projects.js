@@ -15,6 +15,7 @@ import {
 import ProjectsData from "../../shared/opensource/projects.json";
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
+import me6 from "../../assets/images/me6.jpeg";
 
 class Projects extends Component {
   render() {
@@ -30,7 +31,19 @@ class Projects extends Component {
 											src={require(`../../assets/images/${projectsHeader["avatar_image_path"]}`)}
 											alt=""
 										/> */}
-                <ProjectsImg theme={theme} />
+                <img
+                  src={me6}
+                  alt="Projects"
+                  className="projects-image"
+                  style={{
+                    width: "100%",
+                    maxWidth: "500px",
+                    height: "auto",
+                    borderRadius: "12px",
+                    objectFit: "contain",
+                    objectPosition: "center",
+                  }}
+                />
               </div>
               <div className="projects-heading-text-div">
                 <h1
